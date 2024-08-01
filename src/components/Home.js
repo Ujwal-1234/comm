@@ -8,9 +8,12 @@ import { useAuth } from '../AuthContext';
 import { useNavigate } from 'react-router-dom';
 import Frame from './Frame';
 import Todo from '../pages/Todo';
-
+import Notification from './Notification';
 
 import Draggable from 'react-draggable';
+import LiveStream from './LiveStream';
+import ViewLiveStream from './ViewLiveStream';
+import ViewRecordedStream from './ViewRecordedStream';
 
 export default function Home() {
   
@@ -31,7 +34,36 @@ export default function Home() {
               </div>
             </Draggable>
           </div>
+          <div>
+            <Draggable>
+              <div>
+                <Frame element={<Notification />} topic={"Notification"} width={"w-auto"} height={"h-auto"} />
+              </div>
+            </Draggable>
           </div>
+          <div>
+            <Draggable>
+              <div>
+                <Frame element={<LiveStream />} topic={"Live Streaming"} width={"w-auto"} height={"h-auto"} />
+              </div>
+            </Draggable>
+          </div>
+          <div>
+            <Draggable>
+              <div>
+                <Frame element={<ViewRecordedStream />} topic={"Video Streaming"} width={"w-auto"} height={"h-auto"} />
+              </div>
+            </Draggable>
+          </div>
+          
+          <div>
+            <Draggable>
+              <div>
+                <Frame element={<ViewLiveStream />} topic={"Video Streaming"} width={"w-auto"} height={"h-auto"} />
+              </div>
+            </Draggable>
+          </div>
+      </div>
     </div>
   );
 }
